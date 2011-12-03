@@ -1,4 +1,4 @@
-/*
-!.gitignore
-!README.md
-!rsm.sh
+src/*
+!src/.gitkeep
+versions/*
+!versions/.gitkeep
