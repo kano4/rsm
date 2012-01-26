@@ -7,7 +7,10 @@ fi
 # rsm command
 rsm() {
   ruby_path=$1
-  if [ -d $HOME/.rsm/versions/$ruby_path/bin ]; then
+  if [ -z $ruby_path ]; then
+    echo "Usage: rsm [version]"
+    echo "\n`ls ~/.rsm/versions`\n"
+  elif [ -d $HOME/.rsm/versions/$ruby_path/bin ]; then
     if [ `echo $PATH | grep $HOME/.rsm/versions` ]; then
       echo "Switch $ruby_path"
       export PATH=`echo $PATH | sed -e "s/\/.rsm\/versions\/.[^/]*/\/.rsm\/versions\/$ruby_path/g"`
